@@ -21,5 +21,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.album {
+    width: calc((100% / 5) - 40px);
+    margin: 10px 20px;
+    background-color: #2e3a46;
+    &-img {
+        padding: 20px;
+    }
+    &-text {
+        text-align: center;
+        padding-bottom: 10px;
+        .title {
+            font-size: 22px;
+            padding: 3px;
+            color: white;
+        }
+        .author, .year {
+            padding: 2px;
+            color: #717375;
+        }
+    }
+}
 </style>
