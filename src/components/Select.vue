@@ -1,12 +1,12 @@
 <template>
     <div class="select-wrapper">
         Mostra per genere:
-        <select v-model="selectOption" name="genere" id="genere">
-            <option @click="$emit('optionClicked', selectOption)" value="">All</option>
-            <option @click="$emit('optionClicked', selectOption)" value="Rock">Rock</option>
-            <option @click="$emit('optionClicked', selectOption)" value="Pop">Pop</option>
-            <option @click="$emit('optionClicked', selectOption)" value="Jazz">Jazz</option>
-            <option @click="$emit('optionClicked', selectOption)" value="Metal">Metal</option>
+        <select @click="$emit('optionClicked', selectOption)" v-model="selectOption" name="genere" id="genere">
+            <option value="">All</option>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Metal">Metal</option>
         </select>
     </div>
 </template>

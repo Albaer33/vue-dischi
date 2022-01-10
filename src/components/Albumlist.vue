@@ -2,7 +2,7 @@
     <main>
         <Select @optionClicked='showOption' />
         <div class="wrapper">
-            <Album v-for="(album, index) in albums" :key="index" :albumObj="album" />
+            <Album v-for="(album, index) in filteredAlbums" :key="index" :albumObj="album" />
         </div>
     </main>
 </template>
@@ -25,9 +25,22 @@ export default {
         };
     },
     methods: {
-        optionClicked: function(text) {
+        showOption: function(text) {
             this.optionSelected = text;
         },
+    },
+    computed: {
+        filteredAlbums: function() {
+            // se optionselected è vuoto mostra l'intero array di albums
+            if(this.optionSelected === '') {
+                return this.albums;
+            }
+            // altrimenti mostra l'array per genere
+            const filteredArray = this.albums.filter((element) => {
+                return element.genre.toLowerCase().includes(this.optionSelected.toLowerCase());
+            });
+            return filteredArray;
+        }
     },
     created: function() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
