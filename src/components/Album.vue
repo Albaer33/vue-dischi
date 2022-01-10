@@ -25,9 +25,7 @@ export default {
     width: calc((100% / 5) - 40px);
     margin: 10px 20px;
     background-color: #2e3a46;
-    &-img {
-        padding: 20px;
-    }
+    padding: 20px;
     &-text {
         text-align: center;
         padding-bottom: 10px;
